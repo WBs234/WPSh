@@ -1,6 +1,6 @@
 
 import netifaces
-import subprocesses
+import subprocess
 
 def get_wifi_interface():
     interfaces = netifaces.interfaces()
