@@ -24,7 +24,7 @@ print("(_/  ")
 print(ciano+"\n.  ..__  __..                  , ")
 print(ciano+"|  |[__)(__ |_    __ _.._.*._ -+- ")
 print(ciano+"|/\||   .__)[ )  _) (_.[  |[_) | "+magenta+"Eu te amo amor S2")
-                           |   
+                              
 os.system("clear")
 def get_wifi_interface():
     interfaces = netifaces.interfaces()
