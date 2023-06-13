@@ -3,6 +3,13 @@ import os
 import netifaces
 import subprocess
 
+vermelho = '\033[31m'
+verde = '\033[32m'
+ciano = '\033[36m'
+magenta = '\033[35m'
+amarelo = '\033[33m'
+branco = '\033[37m'
+
 os.system("clear")
 def get_wifi_interface():
     interfaces = netifaces.interfaces()
@@ -13,23 +20,25 @@ def get_wifi_interface():
 wifi_interface = get_wifi_interface()
 time.sleep(1)
 if wifi_interface:
-    print(f"Nome da interface Wi-Fi: {wifi_interface} (coloque a baixo)")
+    print(ciano)
+    print(f"Nome da interface Wi-Fi: {wifi_interface}"+magenta+" (coloque a baixo)")
 else:
-    print("Nenhuma interface Wi-Fi encontrada.")
+    print(vermelho+"Nenhuma interface Wi-Fi encontrada.")
 time.sleep(1)
-print("[1] 10M - 15M  [10] 55M - 60M")
-print("[2] 15M - 20M  [11] 60M - 65M")
-print("[3] 20M - 25M  [12] 65M - 70M")
-print("[4] 25M - 30M  [13] 70M - 75M")
-print("[5] 30M - 35M  [14] 75M - 80M")
-print("[6] 35M - 40M  [15] 80M - 85M")
-print("[7] 40M - 45M  [16] 85M - 90M")
-print("[8] 45M - 50M  [17] 90M - 99M")
-print("[9] 50M - 55M")
-print("Digite onde você deseja começar.")
-n=int(input("[~] "))
+print(ciano+"["+magenta+"1"+ciano+"]"+branco+" 10M - 15M  "+ciano+"["+magenta+"10"+ciano+"]"+branco+" 55M - 60M")
+print(ciano+"["+magenta+"2"+ciano+"]"+branco+" 15M - 20M  "+ciano+"["+magenta+"11"+ciano+"]"+branco+" 60M - 65M")
+print(ciano+"["+magenta+"3"+ciano+"]"+branco+" 10M - 15M  "+ciano+"["+magenta+"12"+ciano+"]"+branco+" 55M - 60M")
+print(ciano+"["+magenta+"4"+ciano+"]"+branco+" 15M - 20M  "+ciano+"["+magenta+"13"+ciano+"]"+branco+" 60M - 65M")
+print(ciano+"["+magenta+"5"+ciano+"]"+branco+" 10M - 15M  "+ciano+"["+magenta+"14"+ciano+"]"+branco+" 55M - 60M")
+print(ciano+"["+magenta+"6"+ciano+"]"+branco+" 15M - 20M  "+ciano+"["+magenta+"15"+ciano+"]"+branco+" 60M - 65M")
+print(ciano+"["+magenta+"7"+ciano+"]"+branco+" 10M - 15M  "+ciano+"["+magenta+"16"+ciano+"]"+branco+" 55M - 60M")
+print(ciano+"["+magenta+"8"+ciano+"]"+branco+" 15M - 20M  "+ciano+"["+magenta+"17"+ciano+"]"+branco+" 60M - 65M")
+print(ciano+"["+magenta+"9"+ciano+"]"+branco+" 50M - 55M")
+print(ciano+"Digite onde você deseja começar.")
+n=int(input(ciano+"["+magenta+"~"+ciano+"] "))
 s=str(n)
-ssid = input("Qual o nome da rede que deseja invadir? ")
+input("Qual o nome da rede que deseja invadir? ")
+ssid = input(ciano+"["+magenta+"~"+ciano+"] ")
 while True:
     pins_file = "wordlistofc"+s+".txt"
     def connect_wifi(pin):
@@ -45,10 +54,11 @@ while True:
                 print(f"Testando PIN: {pin}")
                 result = connect_wifi(pin)
                 if "SUCCESS" in result:
+                    print(verde)
                     print(f"Successo! PIN: {pin}")
                     exit()
                 else:
-                    print("PIN inválido")
+                    print(amarelo+"PIN inválido")
 
     if __name__ == "__main__":
         main()
