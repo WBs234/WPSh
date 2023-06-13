@@ -9,7 +9,18 @@ ciano = '\033[36m'
 magenta = '\033[35m'
 amarelo = '\033[33m'
 branco = '\033[37m'
-
+print("\033[36m         _.-.")
+print("       ,'/ //\ ")
+print("      /// // /) ")
+print("     /// // //| ")
+print("    /// // /// ")
+print("   /// // /// ")
+print("  (`: // /// ")
+print("   `;`: /// ")
+print("\033[33m   / /""\033[36m:`:/")
+print("\033[33m  / /""\033[36m  `'")
+print("\033[33m / /")
+print("(_/  ")
 os.system("clear")
 def get_wifi_interface():
     interfaces = netifaces.interfaces()
