@@ -51,10 +51,10 @@ print(ciano+"["+magenta+"7"+ciano+"]"+branco+" 10M - 15M  "+ciano+"["+magenta+"1
 print(ciano+"["+magenta+"8"+ciano+"]"+branco+" 15M - 20M  "+ciano+"["+magenta+"17"+ciano+"]"+branco+" 60M - 65M")
 print(ciano+"["+magenta+"9"+ciano+"]"+branco+" 50M - 55M")
 print(ciano+"Digite onde você deseja começar.")
-n=int(input(ciano+"["+magenta+"~"+ciano+"] "+branco))
+n=int(input(ciano+"["+magenta+"~"+ciano+"] "+magenta))
 s=str(n)
-input("Qual o nome da rede que deseja invadir? ")
-ssid = input(ciano+"["+magenta+"~"+ciano+"] "+branco)
+print("Qual o nome da rede que deseja invadir? ")
+ssid = input(ciano+"["+magenta+"~"+ciano+"] "+magenta)
 while True:
     pins_file = "wordlistofc"+s+".txt"
     def connect_wifi(pin):
