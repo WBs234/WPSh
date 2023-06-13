@@ -2,7 +2,7 @@ import time
 import os
 import netifaces
 import subprocess
-
+os.system("clear")
 vermelho = '\033[31m'
 verde = '\033[32m'
 ciano = '\033[36m'
@@ -25,7 +25,7 @@ print(ciano+"\n.  ..__  __..                  , ")
 print(ciano+"|  |[__)(__ |_    __ _.._.*._ -+- ")
 print(ciano+"|/\||   .__)[ )  _) (_.[  |[_) | "+magenta+"Eu te amo amor S2")
                               
-os.system("clear")
+
 def get_wifi_interface():
     interfaces = netifaces.interfaces()
     for interface in interfaces:
@@ -40,6 +40,7 @@ if wifi_interface:
 else:
     print(vermelho+"Nenhuma interface Wi-Fi encontrada.")
 time.sleep(1)
+print("\n")
 print(ciano+"["+magenta+"1"+ciano+"]"+branco+" 10M - 15M  "+ciano+"["+magenta+"10"+ciano+"]"+branco+" 55M - 60M")
 print(ciano+"["+magenta+"2"+ciano+"]"+branco+" 15M - 20M  "+ciano+"["+magenta+"11"+ciano+"]"+branco+" 60M - 65M")
 print(ciano+"["+magenta+"3"+ciano+"]"+branco+" 10M - 15M  "+ciano+"["+magenta+"12"+ciano+"]"+branco+" 55M - 60M")
