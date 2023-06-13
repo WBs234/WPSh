@@ -69,7 +69,7 @@ while True:
             for pin in pins:
                 pin = pin.strip()
                 os.system("clear")
-                print("Testando PIN: "+ciano+"pin")
+                print("Testando PIN: "+ciano+pin)
                 result = connect_wifi(pin)
                 if "SUCCESS" in result:
                     print(verde)
