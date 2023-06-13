@@ -17,6 +17,7 @@ else:
     print("Nenhuma interface Wi-Fi encontrada.")
 
 while True:
+    n=0
     n=n+1
 
     wifi_interface = input("Qual o nome da sua interface Wifi? ")
