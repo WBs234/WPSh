@@ -32,13 +32,13 @@ While True:
             pins = file.readlines()
             for pin in pins:
                 pin = pin.strip()
-                print(f"Testing PIN: {pin}")
+                print(f"Testando PIN: {pin}")
                 result = connect_wifi(pin)
                 if "SUCCESS" in result:
-                    print(f"Success! PIN found: {pin}")
+                    print(f"Successo! PIN: {pin}")
                     exit()
                 else:
-                    print("PIN not found")
+                    print("PIN inválido")
 
     if __name__ == "__main__":
         main()
