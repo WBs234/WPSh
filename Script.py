@@ -2,6 +2,7 @@ import time
 import os
 import netifaces
 import subprocess
+import itertools
 os.system("clear")
 vermelho = '\033[31m'
 verde = '\033[32m'
@@ -67,7 +68,7 @@ while True:
         else:
             return False
     if test_wps_pin(pin1):
-        print("Primeiros quatros digitos encontrados com sucesso!!")
+        print(verde+"Primeiros quatros digitos encontrados com sucesso!!")
         break
      else:
         print
@@ -108,4 +109,3 @@ while True:
 
     if __name__ == "__main__":
         main()
-        n=n+1
