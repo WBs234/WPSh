@@ -36,6 +36,7 @@ def get_wifi_interface():
     return None
 
 wifi_interface = get_wifi_interface()
+ssid=wifi_interface
 time.sleep(1)
 
 if wifi_interface:
