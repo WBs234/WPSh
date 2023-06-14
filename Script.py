@@ -72,8 +72,8 @@ while True:
             while True:
               with open("p2.txt", "r") as file:
                pin2 = file.readlines()
-                vx=str(pin1)+str(pin2)
-                vy=int(vx)
+               vx=str(pin1)+str(pin2)
+               vy=int(vx)
                 def calculate_wps_pin(last_digit):
                     possible_digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                     combinations = itertools.product(range(10), repeat=7)
