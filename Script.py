@@ -37,7 +37,7 @@ wifi_interface = get_wifi_interface()
 time.sleep(1)
 if wifi_interface:
     print(ciano)
-    print(f"Nome da interface Wi-Fi: {wifi_interface}"+magenta+" (coloque a baixo)")
+    print(f"Nome da interface Wi-Fi: "+magenta+wifi_interface)
 else:
     print(vermelho+"Nenhuma interface Wi-Fi encontrada.")
 time.sleep(1)
