@@ -28,7 +28,7 @@ with open('p2.txt', 'w') as file:
 print("finalizado.")
 print("\n")
 resp=input("Deseja executar o script agora?[S/N] ")
-if resp1=="S":
+if resp=="S":
   os.system("python3 Script.py")
 else:
   os.system("clear")
