@@ -65,7 +65,7 @@ def mains():
         pins = file.read().splitlines()
 
     for pin in pins:
-        if test_wps_pin(pin[:4]):
+        if test_wps_pin(pin[:4],ssid):
             pin1 = pin[:4]
             print(f"Primeiros quatros digitos encontrados com sucesso!! PIN: {pin1}")
             break
