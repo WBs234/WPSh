@@ -60,7 +60,7 @@ while True:
     if test_wps_pin(pin1):
         print(verde+"Primeiros quatros digitos encontrados com sucesso!!")
         break
-     else:
+    else:
         print
 while True:
     def connect_wifi(pin):
