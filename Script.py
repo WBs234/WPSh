@@ -2,7 +2,7 @@ import time
 import os
 import netifaces
 import subprocess
-import itertools
+import intertools
 os.system("clear")
 vermelho = '\033[31m'
 verde = '\033[32m'
