@@ -79,12 +79,21 @@ while True:
 
     def main():
             while True:
-              #gerar pin2 e criar o lu(vy calculo)
               with open("p2.txt", "r") as file:
                pin2 = file.readlines()
                 vx=str(pin1)+str(pin2)
                 vy=int(vx)
-                lu=
+                def calculate_wps_pin(last_digit):
+                    possible_digits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                    combinations = itertools.product(range(10), repeat=7)
+                    for combination in combinations:
+                        if (sum(combination) * 3 + last_digit) % 10 == 0:
+                            pin = ''.join(str(digit) for digit in combination) + str(last_digit)
+                            return pin
+                        return None
+                seven_digits = vy
+                    last_digit = calculate_wps_pin(int(seven_digits))
+                    lu=last_digit
                 px=vx+str(lu)
                 pin = int(px)
                 os.system("clear")
@@ -93,7 +102,7 @@ while True:
                 if "SUCCESS" in result:
                     print(verde)
                     print(f"Successo! PIN: {pin}")
-                    break
+                    exit()
                 else:
                     print(amarelo+"PIN inválido")
 
