@@ -24,9 +24,9 @@ print("\033[33m   / /"+"\033[36m:`:/")
 print("\033[33m  / /"+"\033[36m  `'")
 print("\033[33m / /")
 print("(_/  ")
-
 print(ciano+"\n.  ..__  __..                  , ")
-print(ciano+"|  |[__)(__ |_    __ _.._.*._ -+- ")                                                                                                       print(ciano+"|/\||   .__)[ )  _) (_.[  |[_) | "+magenta+"Eu te amo amor S2")
+print(ciano+"|  |[__)(__ |_    __ _.._.*._ -+- ")                                                                                                       
+print(ciano+"|/\||   .__)[ )  _) (_.[  |[_) | "+magenta+"Eu te amo amor S2")
 
 def get_wifi_interface():
     interfaces = netifaces.interfaces()
