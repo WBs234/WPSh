@@ -22,3 +22,5 @@ resp=input("Deseja executar o script agora?[S/N] ")
 resp1==resp.upper()
 if resp1==S:
   os.system("python3 Script.py")
+else:
+  os.system("clear")
