@@ -79,9 +79,9 @@ while True:
                            pin = ''.join(str(digit) for digit in combination) + str(last_digit)
                            return pin
                        return None
-                    seven_digits = vy
-                    last_digit = calculate_wps_pin(int(seven_digits))
-                    lu=last_digit
+                   seven_digits = vy
+                   last_digit = calculate_wps_pin(int(seven_digits))
+                   lu=last_digit
                 px=vx+str(lu)
                 pin = int(px)
                 os.system("clear")
