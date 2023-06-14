@@ -57,7 +57,7 @@ def test_wps_pin(pin):
     else:
         return False
 
-def main():
+def mains():
     pin_file = "p1.txt"
 
     with open(pin_file, "r") as file:
