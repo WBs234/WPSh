@@ -1,6 +1,8 @@
 import os
 import time
 
+ciano = '\033[36m'
+print(ciano)
 os.system("clear")
 print("atualizando...")
 print("\n")
