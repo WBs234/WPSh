@@ -17,7 +17,14 @@ os.system("pip install intertools")
 os.system("clear")
 print("gerando wordlist...")
 print("\n")
-os.system("""seq -w 0 9999 | while read -r number; do printf "%04d\n" "$number"; done > pin1.txt && seq -w 0 999 | while read -r number; do printf "%04d\n" "$number"; done > pin2.txt""")
+with open('pin1.txt', 'w') as file:
+    for i in range(10000):
+        number = str(i).zfill(4)
+        file.write(number + '\n')
+with open('pin2.txt', 'w') as file:
+    for i in range(10000):
+        number = str(i).zfill(4)
+        file.write(number + '\n')
 print("finalizado.")
 printf("\n")
 resp=input("Deseja executar o script agora?[S/N] ")
