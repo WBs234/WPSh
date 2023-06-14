@@ -50,10 +50,10 @@ print(ciano + "Qual o nome da rede que deseja invadir? ")
 ssid = input(ciano + "[" + magenta + "~" + ciano + "] " + magenta)
 
 def test_wps_pin(pin):
-   command = f"wpa_cli -i wlan0 wps_reg {ssid} {pin}"
+    command = f"wpa_cli -i wlan0 wps_reg {ssid} {pin}"
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
     if result.returncode == 0:
-
+   
 def mains():
     pin_file = "p1.txt"
     pin1 = ""
