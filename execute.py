@@ -17,11 +17,11 @@ os.system("pip install intertools")
 os.system("clear")
 print("gerando wordlist...")
 print("\n")
-with open('pin1.txt', 'w') as file:
+with open('p1.txt', 'w') as file:
     for i in range(10000):
         number = str(i).zfill(4)
         file.write(number + '\n')
-with open('pin2.txt', 'w') as file:
+with open('p2.txt', 'w') as file:
     for i in range(10000):
         number = str(i).zfill(4)
         file.write(number + '\n')
