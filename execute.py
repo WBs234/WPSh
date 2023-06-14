@@ -26,7 +26,7 @@ with open('pin2.txt', 'w') as file:
         number = str(i).zfill(4)
         file.write(number + '\n')
 print("finalizado.")
-printf("\n")
+print("\n")
 resp=input("Deseja executar o script agora?[S/N] ")
 resp1==resp.upper()
 if resp1==S:
